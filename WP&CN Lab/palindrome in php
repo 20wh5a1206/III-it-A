@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$string = "1121";
+if(strrev($string) == $string)
+{
+echo "is palindrome";
+}
+else{
+echo "not a palindrome";
+}
+?> 
+
+</body>
+</html>

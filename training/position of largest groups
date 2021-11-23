@@ -1,0 +1,19 @@
+class Solution(object):
+    def largeGroupPositions(self, S):
+        ln = len(S)
+        i = 1
+        cur_idx = [0,0]
+        cur_chr = S[0]
+        output = []
+        while i < ln:
+            if cur_chr == S[i]:
+                cur_idx[1] = i
+            else:
+                cur_chr = S[i]
+                if cur_idx[1] - cur_idx[0] >= 2:
+                    output.append(cur_idx)
+                cur_idx = [i, i]
+            i += 1
+        if cur_idx[1] - cur_idx[0] >= 2:
+            output.append(cur_idx)
+        return output
